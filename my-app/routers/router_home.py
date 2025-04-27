@@ -66,7 +66,7 @@ def detalleEstudiante(id_estudiante=None):
         return redirect(url_for('inicio'))
 
 
-# Buscadon de empleados
+# Buscador de estudiantes
 @app.route("/buscando-estudiante", methods=['POST'])
 def viewBuscarEstudianteBD():
     resultadoBusqueda = buscarEstudianteBD(request.json['busqueda'])
