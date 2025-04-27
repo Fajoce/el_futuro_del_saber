@@ -12,6 +12,14 @@ Date: April 24th 2025
 
 ![image](https://github.com/user-attachments/assets/84febcdf-ab7b-42bb-974c-80eee1fe2e12)
 
+![image](https://github.com/user-attachments/assets/29dbdb98-1799-4401-9c81-c53e87b844cb)
+![image](https://github.com/user-attachments/assets/dc7dea2a-086e-4891-b86d-8038a7bfbb79)
+![image](https://github.com/user-attachments/assets/751d5fd3-18e6-4ac4-9eb8-2fc1fb3d6f65)
+![image](https://github.com/user-attachments/assets/910fdb47-9eb7-4d06-976b-6d86bbc63101)
+
+![image](https://github.com/user-attachments/assets/81ca2a7d-0d13-469a-b812-ba44cc557455)
+![image](https://github.com/user-attachments/assets/c34f2b84-af7d-4897-a7a6-2efd0f6b8b3a)
+
 
 ## Requerimientos 📋
 
