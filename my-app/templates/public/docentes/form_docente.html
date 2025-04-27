@@ -1,0 +1,146 @@
+{% extends 'public/base_cpanel.html' %}
+<!--Cambiando el title-->
+{% block title %}Crud con Python 🐍 | Registrar Docente{% endblock %}
+<!---->
+{% block customCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename ='assets/css/file.css') }}" />
+{% endblock %}
+
+<!--Inicio del block-->
+{% block body %}
+<div class="card" style="border-radius: 0px !important">
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-12">
+      <h3 class="text-center mt-5 mb-3">REGISTRAR DOCENTE</h3>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-10">
+      <form
+        class="form-horizontal mx-auto"
+        method="POST"
+        action="/form-registrar-docente"
+        autocomplete="off"
+        enctype="multipart/form-data">
+        <div class="card-body">
+          <div class="row">
+            <div class="row mt-2">
+              <div class="col-md-6">
+                <label for="tipo_doc" class="form-label">
+               Tipo Documento:
+             </label>
+              <select
+               class="form-select"
+               name="tipo_doc"
+               aria-label="Default select example">
+               <option selected>--select--</option>
+               <option value="cedula">cedula</option>
+               <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+               <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
+               </select>
+            </div>
+          
+              <div class="col-md-6">
+                <label for="num_doc" class="form-label">
+                  Numero de Documento 
+                </label>
+                <input
+                  type="text"
+                  name="num_doc"
+                  class="form-control"
+                  required />
+              </div>
+            </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="nombres" class="form-label">
+                Nombre del Docente
+              </label>
+              <input
+                type="text"
+                name="nombres"
+                class="form-control"
+                required />
+            </div>
+            <div class="col-md-6">
+              <label for="apellidos" class="form-label">
+                Apellidos del Docente:
+              </label>
+              <input
+                class="form-control"
+                type="text"
+                name="apellidos"
+                required />
+            </div>
+            <div class="row mt-2">
+            <div class="col-md-6">
+              <label for="feccha_nacimiento" class="form-label">
+                Fecha Nacimiento:
+              </label>
+              <input
+                class="form-control"
+                type="date"
+                name="fecha_nacimiento"
+                required />
+            </div>
+                <div class="col-md-6">
+                    <label for="escolaridad" class="form-label">
+                        Escolaridad:
+                      </label>
+                       <select
+                        class="form-select"
+                        name="escolaridad"
+                        aria-label="Default select example">
+                        <option selected>--select--</option>
+                        <option value="Pregrado">Pregrado</option>
+                        <option value="PostGrado">PostGrado</option>
+                        <option value="Especializacion">Especializacion</option>
+                        <option value="PHD">PHD</option>
+                        </select>
+            </div>
+            </div>
+            <div class="row mt-2">
+            <div class="col-md-6">
+              <label for="email" class="form-label">
+                Email:
+              </label>
+              <input
+                class="form-control"
+                type="text"
+                name="email"
+                required />
+            </div>
+            
+          
+            <div class="col-md-6">
+              <label for="tel_fijo" class="form-label">
+                Telefono
+              </label>
+              <input
+                class="form-control"
+                type="text"
+                name="tel_fijo"
+                required />
+            </div>
+          </div>
+
+          
+          <div class="mb-3 mt-4 text-center">
+            <button type="submit" class="btn rounded-pill btn-primary">
+              Guardar registro ahora
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <button onclick="location.href='/lista-de-docentes'" class="btn rounded-pill btn-primary">Regresar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block customJS %}
+<script src="{{ url_for('static', filename ='assets/customJS/file.js') }}"></script>
+{% endblock %}

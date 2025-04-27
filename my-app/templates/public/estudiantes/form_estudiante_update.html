@@ -1,0 +1,66 @@
+{% extends 'public/base_cpanel.html' %}
+<!--Cambiando el title-->
+{% block title %}Crud con Python 🐍 | Actualizar Estudiante{% endblock %}
+<!---->
+{% block customCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename ='assets/css/file.css') }}" />
+{% endblock %}
+
+<!--Inicio del block-->
+{% block body %}
+<div class="card" style="border-radius: 0px !important">
+  {% if respuestaEstudiante %}
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-12">
+      <h3 class="text-center mt-5 mb-3">
+        <a href="/lista-de-estudiantes">
+          <i class="bi bi-arrow-left-circle"></i>
+        </a>
+        ACTUALIZAR DATOS DEL ESTUDIANTE
+      </h3>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-10">
+      <form
+        class="form-horizontal mx-auto"
+        method="POST"
+        action="{{ url_for('actualizarEstudiante') }}"
+        autocomplete="off"
+        enctype="multipart/form-data">
+        Id estudiante:<input type="text" name="id_estudiante" value="{{ respuestaEstudiante.id_estudiante }}" class="form-control"  />
+        Tipo Documento:<input type="text" name="tipo_doc" value="{{ respuestaEstudiante.tipo_doc }}" class="form-control"  />
+        No. Documento<input type="text" name="num_doc" value="{{ respuestaEstudiante.num_doc }}" class="form-control"  />
+        Nombres:<input type="text" name="nombres" value="{{ respuestaEstudiante.nombres }}" class="form-control"  />
+        Apelliods:<input type="text" name="apellidos" value="{{ respuestaEstudiante.apellidos }}" class="form-control"  />
+        Dirección:<input type="text" name="direccion" value="{{ respuestaEstudiante.direccion }}" class="form-control"  />
+        Telefono:<input type="text" name="tel_fijo" value="{{ respuestaEstudiante.tel_fijo }}" class="form-control"  />
+        Email:<input type="email" name="email" value="{{ respuestaEstudiante.email }}" class="form-control"  />
+        Grado:<input type="text" name="grado" value="{{ respuestaEstudiante.grado }}" class="form-control"  />
+        
+          <div class="mb-3 mt-4 text-center">
+            <button type="submit" class="btn rounded-pill btn-primary">
+              Guardar registro ahora
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  {% else %}
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-12">
+      <h3 class="text-center">No existe el estudiante</h3>
+    </div>
+  </div>
+
+  {% endif %}
+</div>
+{% endblock %} {% block customJS %}
+<script src="{{ url_for('static', filename ='assets/customJS/file.js') }}"></script>
+{% endblock %}

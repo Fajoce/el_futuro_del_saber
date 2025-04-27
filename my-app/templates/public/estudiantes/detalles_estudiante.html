@@ -1,0 +1,91 @@
+{% extends 'public/base_cpanel.html' %}
+<!--Cambiando el title-->
+{% block title %}Crud con Python 🐍 | Detalles Estudiante{% endblock %}
+<!---->
+{% block customCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename ='assets/css/file.css') }}" />
+{% endblock %}
+
+<!--Inicio del block-->
+{% block body %}
+<!---->
+{% if (detalle_estudiante|length) %}
+<div class="card" style="border-radius: 0px !important">
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-12">
+      <h3 class="text-center mt-5 mb-3">
+        <a href="/lista-de-estudiantes">
+          <i class="bi bi-arrow-left-circle"></i>
+        </a>
+        INFORMACIÓN DEL ESTUDIANTE
+      </h3>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-10">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="nombres" class="form-label">
+              Nombre del estudiante
+            </label>
+            <br />
+            {{ detalle_estudiante.nombres}}
+          </div>
+          <div class="col-md-6">
+            <label for="apellidos" class="form-label">
+              Apellidos del estudiante
+            </label>
+            <br />
+            {{ detalle_estudiante.apellidos}}
+          </div>
+        </div>
+
+        <div class="row mt-2">          
+          <div class="col-md-6">
+            <label for="tel_fijo" class="form-label">
+              Telefono del estudiante
+            </label>
+            <br />
+            {{ detalle_estudiante.tel_fijo}}
+          </div>
+          <div class="col-md-6">
+            <label for="direccion" class="form-label">
+              <b>Dirección del estudiante:</b>
+            </label>
+            <br />
+            {{ detalle_estudiante.direccion}}
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <label for="email" class="form-label">
+              Email del estudiante
+            </label>
+            <br />
+            {{ detalle_estudiante.email}}
+          </div>
+          <div class="col-md-6">
+            <label for="grado" class="form-label">
+              Grado del Estudiante
+            </label>
+            <br />
+            {{ detalle_estudiante.grado}}
+          </div>
+        </div>        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+<h2 class="text-center">
+  No existe el Estudiante 😭
+  <hr />
+</h2>
+{% endif %} {% endblock %}

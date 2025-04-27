@@ -1,0 +1,99 @@
+{% extends 'public/base_cpanel.html' %}
+<!--Cambiando el title-->
+{% block title %}Crud con Python 🐍 | Registrar Empleado{% endblock %}
+<!---->
+{% block customCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename ='assets/css/file.css') }}" />
+{% endblock %}
+
+<!--Inicio del block-->
+{% block body %}
+<div class="card" style="border-radius: 0px !important">
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-12">
+      <h3 class="text-center mt-5 mb-3">REGISTRAR GRUPO</h3>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-10">
+      <form
+        class="form-horizontal mx-auto"
+        method="POST"
+        action="/form-registrar-grupo"
+        autocomplete="off"
+        enctype="multipart/form-data">
+        <div class="card-body">
+            <div class="row mt-2">
+            <div class="col-md-6">
+              <label for="grado" class="form-label">
+                Nombre Grupo
+              </label>
+              <input
+                class="form-control"
+                type="text"
+                name="grado"
+                required />
+            </div>
+            <div class="col-md-6">
+                <label for="id_docente" class="form-label">
+               Id docente
+             </label>
+             <select
+               class="form-select"
+               name="id_docente"
+               aria-label="Default select example">
+               <option selected>--select--</option>
+               <option value="1">Donald Thrump</option>
+               <option value="2">Ronald Reagan</option>
+               <option value="3">Alvaro uribe</option>
+               </select>
+            </div>
+        </div> 
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <label for="aforo" class="form-label">
+              Maximo Aforo:
+            </label>
+            <input
+              class="form-control"
+              type="number"
+              name="aforo"
+              required />
+          </div>
+          <div class="col-md-6">
+              <label for="sexo" class="form-label">
+             Sexo:
+           </label>
+           <select
+             class="form-select"
+             name="sexo"
+             aria-label="Default select example">
+             <option selected>--select--</option>
+             <option value="1">Masculino</option>
+             <option value="2">Femenino</option>
+             <option value="3">Mixto</option>
+             </select>
+          </div>
+      </div>                 
+        
+          </div>         
+
+          <div class="mb-3 mt-4 text-center">
+            <button type="submit" class="btn rounded-pill btn-primary">
+              Guardar 
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <button onclick="location.href='/lista-de-grupos'" class="btn rounded-pill btn-primary">Regresar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block customJS %}
+<script src="{{ url_for('static', filename ='assets/customJS/file.js') }}"></script>
+{% endblock %}

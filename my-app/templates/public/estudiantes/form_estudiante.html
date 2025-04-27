@@ -1,0 +1,162 @@
+{% extends 'public/base_cpanel.html' %}
+<!--Cambiando el title-->
+{% block title %}Crud con Python 🐍 | Registrar Estudiante{% endblock %}
+<!---->
+{% block customCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename ='assets/css/file.css') }}" />
+{% endblock %}
+
+<!--Inicio del block-->
+{% block body %}
+<div class="card" style="border-radius: 0px !important">
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-12">
+      <h3 class="text-center mt-5 mb-3">REGISTRAR ESTUDIANTE</h3>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-10">
+      <form
+        class="form-horizontal mx-auto"
+        method="POST"
+        action="/form-registrar-estudiante"
+        autocomplete="off"
+        enctype="multipart/form-data">
+        <div class="card-body">
+          <div class="row">
+            <div class="row mt-2">
+              <div class="col-md-6">
+                <label for="tipo_doc" class="form-label">
+               Tipo Documento:
+             </label>
+              <select
+               class="form-select"
+               name="tipo_doc"
+               aria-label="Default select example">
+               <option selected>cedula</option>
+               <option value="1">Trajeta de Identidad</option>
+               <option value="2">Cedula de Extranjeria</option>
+               </select>
+            </div>
+          
+              <div class="col-md-6">
+                <label for="num_doc" class="form-label">
+                  Numero de Documento del estudiante
+                </label>
+                <input
+                  type="text"
+                  name="num_doc"
+                  class="form-control"
+                  required />
+              </div>
+            </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="nombres" class="form-label">
+                Nombre del estudiante
+              </label>
+              <input
+                type="text"
+                name="nombres"
+                class="form-control"
+                required />
+            </div>
+            <div class="col-md-6">
+              <label for="apellidos" class="form-label">
+                Apellidos del estudiante
+              </label>
+              <input
+                class="form-control"
+                type="text"
+                name="apellidos"
+                required />
+            </div>
+            <div class="row mt-2">
+            <div class="col-md-6">
+              <label for="feccha_nacimiento" class="form-label">
+                Fecha Nacimiento:
+              </label>
+              <input
+                class="form-control"
+                type="date"
+                name="fecha_nacimiento"
+                required />
+            </div>
+                <div class="col-md-6">
+                  <label for="feccha_nacimiento" class="form-label">
+                    Ciudad de residencia:
+                  </label>
+                  <input
+                    class="form-control"
+                    type="ciudad"
+                    name="ciudad"
+                    required />
+            </div>
+            </div>
+            <div class="row mt-2">
+            <div class="col-md-6">
+              <label for="grado" class="form-label">
+                Grado del estudiante
+              </label>
+              <input
+                class="form-control"
+                type="text"
+                name="grado"
+                required />
+            </div>
+            <div class="col-md-6">
+              <label for="direccion" class="form-label">
+                Direccion del estudiante
+              </label>
+              <input
+                class="form-control"
+                type="text"
+                name="direccion"
+                required />
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-md-6">
+              <label for="email" class="form-label">
+                Email del estudiante
+              </label>
+              <input
+                class="form-control"
+                type="email"
+                name="email"
+                required />
+            </div>
+            <div class="col-md-6">
+              <label for="tel_fijo" class="form-label">
+                Telefono
+              </label>
+              <input
+                class="form-control"
+                type="text"
+                name="tel_fijo"
+                required />
+            </div>
+          </div>
+
+          
+          <div class="mb-3 mt-4 text-center">
+            <button type="submit" class="btn rounded-pill btn-primary">
+              Guardar registro ahora
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <button onclick="location.href='/lista-de-estudiantes'" class="btn rounded-pill btn-primary">Regresar</button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block customJS %}
+<script src="{{ url_for('static', filename ='assets/customJS/file.js') }}"></script>
+{% endblock %}

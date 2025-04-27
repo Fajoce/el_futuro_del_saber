@@ -1,0 +1,45 @@
+{% for student in dataBusqueda %}
+<tr id="estudianteo_{{ student.id_estudiante }}">
+  <td>{{ student.id_estudiante }}</td>
+  <td>{{ student.nombre }}</td>
+  <td>{{ student.apellidos }}</td>
+  <td>{{ student.grado }}</td>
+  <td>{{ student.tel_fijo }}</td>
+  <td>{{ student.email }}</td>
+  <td>
+    <a
+      href="/detalles-estudiante/{{ student.id_estudiante }}"
+      title="Ver envio"
+      type="button"
+      class="btn btn-info btn-sm"
+      data-bs-toggle="tooltip"
+      data-bs-offset="0,4"
+      data-bs-placement="top"
+      data-bs-html="true"
+      title="<span>Ver detalles</span>">
+      <i class="bi bi-eye"></i>
+      Ver detalles
+    </a>
+    <a
+      href="{{ url_for('viewEditarEstudiante', id = student.id_estudiante) }}"
+      class="btn btn-success btn-sm"
+      tooltip="Actualizar Registro">
+      <i class="bi bi-arrow-clockwise"></i>
+      Actualizar
+    </a>
+    <a
+      href="#"
+      onclick="RemoverEstudiante('{{ student.id_estudiante }}')"
+      class="btn btn-danger btn-sm"
+      data-bs-toggle="tooltip"
+      data-bs-offset="0,4"
+      data-bs-placement="top"
+      data-bs-html="true"
+      title="<span>Eliminar estudiante {{ student.nombre }}</span>">
+      <i class="bi bi-trash3"></i>
+      Eliminar
+    </a>
+  </td>
+</tr>
+
+{% endfor %}

@@ -1,0 +1,100 @@
+{% extends 'public/base_cpanel.html' %}
+<!--Cambiando el title-->
+{% block title %}Crud con Python 🐍 | Registrar Asignatura{% endblock %}
+<!---->
+{% block customCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename ='assets/css/file.css') }}" />
+{% endblock %}
+
+<!--Inicio del block-->
+{% block body %}
+<div class="card" style="border-radius: 0px !important">
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-12">
+      <h3 class="text-center mt-5 mb-3">REGISTRAR ASIGNATURA</h3>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row justify-content-center mb-2">
+    <div class="col-md-10">
+      <form
+        class="form-horizontal mx-auto"
+        method="POST"
+        action="/form-registrar-asignatura"
+        autocomplete="off"
+        enctype="multipart/form-data">
+        <div class="card-body">
+            <div class="row mt-2">
+            <div class="col-md-6">
+              <label for="nombre" class="form-label">
+                Nombre Asignatura
+              </label>
+              <input
+                class="form-control"
+                type="text"
+                name="nombre"
+                required />
+            </div>
+            <div class="col-md-6">
+                <label for="id_docente" class="form-label">
+               Id docente
+             </label>
+             <select
+               class="form-select"
+               name="id_docente"
+               aria-label="Default select example">
+               <option selected>--select--</option>
+               <option value="1">Donald Thrump</option>
+               <option value="2">Peter parker</option>
+               </select>
+            </div>
+        </div>         
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <label for="ihs" class="form-label">
+              Intensidad Horaria
+            </label>
+            <input
+              class="form-control"
+              type="number"
+              name="ihs"
+              required />
+          </div>
+          <div class="col-md-6">
+              <label for="prerequisito" class="form-label">
+             Pre Requisito
+           </label>
+           <select
+             class="form-select"
+             name="prerequisito"
+             aria-label="Default select example">
+             <option selected>--select--</option>
+             <option value="1">Sí</option>
+             <option value="2">No</option>
+             </select>
+          </div>
+      </div>         
+         
+          </div>         
+
+          <div class="mb-3 mt-4 text-center">
+            <button type="submit" class="btn rounded-pill btn-primary">
+              Guardar registro ahora
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <button onclick="location.href='/lista-de-asignaturas'" class="btn rounded-pill btn-primary">
+              Regresar
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block customJS %}
+<script src="{{ url_for('static', filename ='assets/customJS/file.js') }}"></script>
+{% endblock %}
