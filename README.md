@@ -10,6 +10,7 @@ Date: April 24th 2025
 
 ![Recuperar Contraseña](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/dashboard-python-recuperar-clave-urian-viera.png)
 
+![image](https://github.com/user-attachments/assets/84febcdf-ab7b-42bb-974c-80eee1fe2e12)
 
 
 ## Requerimientos 📋
